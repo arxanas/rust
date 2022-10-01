@@ -2577,10 +2577,12 @@ impl Path {
     }
 
     /// Returns an object that implements [`Display`] for safely printing paths
-    /// that may contain non-Unicode data. This may perform lossy conversion,
-    /// depending on the platform.  If you would like an implementation which
-    /// escapes the path please use [`Debug`] instead.
+    /// that may contain non-Unicode data. This may perform lossy conversion in
+    /// the same manner as [`to_string_lossy`], depending on the platform. If
+    // you would like an implementation which escapes the path, please use
+    /// [`Debug`] instead.
     ///
+    /// [`to_string_lossy`]: Path::to_string_lossy
     /// [`Display`]: fmt::Display
     ///
     /// # Examples
